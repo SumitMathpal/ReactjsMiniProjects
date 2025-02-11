@@ -13,6 +13,12 @@ function Todolist() {
     setNewTask(e.target.value);
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      addTask();
+    }
+  }
+
   const addTask = () => {
     if (newTask.trim() !== "" && newDate.trim() !== "") {
       setTasks((prevTasks) => [...prevTasks, { task: newTask, date: newDate }]);
@@ -63,6 +69,7 @@ function Todolist() {
             placeholder="Enter a task..."
             className="Task-input"
             onChange={handleTextInputChange}
+            onKeyDown={handleKeyDown}  
             value={newTask}
           />
           <button className="Add-Task" onClick={addTask}>
