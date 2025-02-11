@@ -49,7 +49,6 @@ function Todolist() {
 
   return (
     <>
- 
       <div className="Todo-list">
         <h1>To-Do List</h1>
         <div>
@@ -82,7 +81,10 @@ function Todolist() {
               <button className="UpWord-btn" onClick={() => moveTaskUp(index)}>
                 👆
               </button>
-              <button className="DownWord-btn" onClick={() => moveTaskDown(index)}>
+              <button
+                className="DownWord-btn"
+                onClick={() => moveTaskDown(index)}
+              >
                 👇
               </button>
             </li>
