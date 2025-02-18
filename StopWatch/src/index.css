@@ -1,0 +1,178 @@
+/* General body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #0a0a0a 30%, #1e1e1e 100%);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* Cyberpunk Glowing Container */
+.stopWatch {
+  background: rgba(42, 42, 42, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px rgba(0, 255, 204, 0.3), inset 0px 0px 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  width: 360px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.stopWatch:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 40px rgba(0, 255, 204, 0.6);
+}
+
+/* Neon Glowing Time Display */
+.display {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00ffcc;
+  background: rgba(30, 30, 30, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 25px rgba(0, 255, 204, 0.7), inset 0px 0px 10px rgba(255, 255, 255, 0.1);
+  user-select: none;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0px 0px 20px rgba(0, 255, 204, 0.8);
+}
+
+/* Button Container */
+.btns {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* General Button Styling */
+button {
+  border: none;
+  padding: 14px 26px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Button Hover Effects */
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400%;
+  height: 400%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Button Active Effect */
+button:active {
+  transform: scale(0.92);
+}
+
+/* Cyberpunk Holographic Glowing Buttons */
+.start-btn {
+  background: linear-gradient(145deg, #00ff00, #008f00);
+  box-shadow: 0px 0px 15px #00ff00, inset 0px 0px 5px rgba(255, 255, 255, 0.1);
+}
+
+.start-btn:hover {
+  background: #00cc00;
+  box-shadow: 0px 0px 25px #00ff00;
+}
+
+/* Stop Button */
+.stop-btn {
+  background: linear-gradient(145deg, #ff0033, #a00020);
+  box-shadow: 0px 0px 15px #ff0033, inset 0px 0px 5px rgba(255, 255, 255, 0.1);
+}
+
+.stop-btn:hover {
+  background: #cc0026;
+  box-shadow: 0px 0px 25px #ff0033;
+}
+
+/* Reset Button */
+.reset-btn {
+  background: linear-gradient(145deg, #ffcc00, #b88a04);
+  box-shadow: 0px 0px 15px #ffcc00, inset 0px 0px 5px rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+.reset-btn:hover {
+  background: #e0a800;
+  box-shadow: 0px 0px 25px #ffcc00;
+}
+
+/* Glowing Border Effect */
+@keyframes neonBorder {
+  0% {
+    border-color: rgba(0, 255, 204, 0.5);
+    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
+  }
+  50% {
+    border-color: rgba(0, 255, 204, 0.9);
+    box-shadow: 0px 0px 25px rgba(0, 255, 204, 0.9);
+  }
+  100% {
+    border-color: rgba(0, 255, 204, 0.5);
+    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
+  }
+}
+
+.stopWatch {
+  animation: neonBorder 2s infinite alternate;
+}
+
+/* Breathing Light Effect on Time Display */
+@keyframes breathing {
+  0% {
+    text-shadow: 0px 0px 20px rgba(0, 255, 204, 0.5);
+  }
+  50% {
+    text-shadow: 0px 0px 35px rgba(0, 255, 204, 0.9);
+  }
+  100% {
+    text-shadow: 0px 0px 20px rgba(0, 255, 204, 0.5);
+  }
+}
+
+.display {
+  animation: breathing 2s infinite alternate;
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+  .stopWatch {
+    width: 90%;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .display {
+    font-size: 2.2rem;
+  }
+}
